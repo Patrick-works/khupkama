@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+$(document).ready(function(){
+  $("#clk").click(function(){
+    $(this).hide();
+  });
+});
+$(document).ready(function(){
+  $("#dbclk").dblclick(function(){
+    $(this).hide();
+  });
+});
+$(document).ready(function(){
+  $("#p1").mouseenter(function(){
+    alert("You entered mouseneter");
+  });
+});
+$(document).ready(function(){
+  $("#p1").mouseleave(function(){
+    alert("Bye! You now using mouse leave p1!");
+  });
+});
+$(document).ready(function(){
+  $("#p1").mousedown(function(){
+    alert("Mouse down ");
+  });
+});
+$(document).ready(function(){
+  $("#p2").hover(function(){
+    alert("You entered p1! by hover ");
+  },
+  function(){
+    alert("Bye! You now leave when unhoverd p1!");
+  }); 
+});
+$(document).ready(function(){
+  $("#p3").on({
+    mouseenter: function(){
+      $(this).css("background-color", "lightgray");
+    },  
+    mouseleave: function(){
+      $(this).css("background-color", "lightblue");
+    }, 
+      
+  });
+});
+$(document).ready(function(){
+  $("input").focus(function(){
+    $(this).css("background-color", "yellow");
+  });
+  $("input").blur(function(){
+    $(this).css("background-color", "green");
+  });
+});
+</script>
+</head>
+<body>
+
+<p id="clk" >If you click on me, I will disappear.</p>
+<p  id="dbclk">If you double-click on me, I will disappear.</p>
+<p id="p1">Enter this paragraph.</p>
+<p id="p2">This is a paragraph.</p>
+<p id="p3">Click or move the mouse pointer over this paragraph.</p>
+Name: <input type="text" name="fullname"><br>
+Email: <input type="text" name="email">
+
+
+
+</body>
+</html>
