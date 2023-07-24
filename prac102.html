@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $("#hide").click(function(){
+                $("p").hide();
+            });
+            $("#show").click(function(){
+                $("p").show();
+            });
+            $("p").css("color","red");
+            $("#byid").css("color","white");
+            $(".byclass").css("color","blue");
+            $("*").css("background-color", "cyan");
+        });
+    </script>
+
+</head>
+<body>
+    <p>this by attribute </p>
+    <p class="byclass">this by class</p>
+    <p id="byid" >this is by id</p>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    
+</body>
+</html>
