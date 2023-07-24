@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script> 
+        $(document).ready(function(){
+          $("#flip").click(function(){
+            $("#panel").slideDown("slow");
+          });
+          $("#up").click(function(){
+            $("#panel").slideUp("slow");
+            });
+        $("#fadedin").click(function(){
+            $("#div1").fadeIn();
+            $("#div2").fadeIn("slow");
+            $("#div3").fadeIn(3000);
+        });
+        $("#fadedout").click(function(){
+             $("#div1").fadeOut();
+            $("#div2").fadeOut("slow");
+            $("#div3").fadeOut(8000);
+  });
+         $("button").click(function(){
+             $("div").animate({right: '250px'});
+  });
+        });
+        </script>
+    <style> 
+        #panel, #flip {
+          padding: 5px;
+          text-align: center;
+          background-color: #30beab27;
+          border: solid 1px #5c2bb686;
+        }
+        
+        #panel {
+          padding: 50px;
+          display: none;
+        }
+        </style>
+</head>
+<body>
+    <div id="flip">Click to slide down panel</div>
+    <div id="panel">Hello world!<br><button id="up">slide uppss</button><br>
+    <button id="fadedin" >fade in</button>
+    <button id="fadedout">Fade outtt</button>
+    <div id="div1" style="width:80px;height:80px;display:none;"><h1>Ting ting ting</h1></div>
+<div id="div2" style="width:80px;height:80px;display:none;"><h1>young fly on track </h1></div>
+<div id="div3" style="width:80px;height:80px;display:none;"><h1> snickers snickers</h1> </div>
+<div style="background:#5a405f;height:50px;width:50px;position:absolute;"></div>
+<button>start moving</button>
+     
+    
+    
+    </div>
+    
+    
+</body>
+</html>
