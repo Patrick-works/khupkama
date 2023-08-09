@@ -1,0 +1,29 @@
+//animate
+  $("#anim").click(function(){
+    var div = $("#anime");  
+    div.animate({left: '100px'}, "slow");
+    div.animate({fontSize: '20px'}, "slow");
+  });
+
+  //chaining
+  $("#clic").click(function(){
+    $("#p1").css("color", "red")
+      .slideUp(2000)
+      .slideDown(2000);
+  });
+
+  //callback
+  $("#cb").click(function(){
+    $("#cbb").hide("slow", function(){
+      alert("Successfully hidden");
+    });
+  });
+
+  //get set
+  {
+  $("#btn1").click(function(){
+    alert("Text: " + $("#test").text());
+  });
+  $("#btn2").click(function(){
+    alert("HTML: " + $("#test").html());
+  });
