@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.0"></script>
+    <script> 
+        $(document).ready(function(){
+          $("button").click(function(){
+            var mereo = $("#mereo");
+            
+            mereo.animate({width: '500px', opacity: '0.8'}, "slow");
+            mereo.animate({height: '100px', opacity: '0.4'}, "slow");
+            var mag = $("#mag");
+            mag.animate({width: '30px', opacity: '0.8'}, "slow");
+            mag.animate({height: '200px', opacity: '0.4'}, "slow");
+            
+            mag.animate({height: '100px', opacity: '0.4'}, "fast");
+            var bullet =$("#bullet")
+            bullet.animate({opacity:"1", left:"500px",top:"60px",  },"slow")
+            bullet.animate({opacity:"1", left:"1350px",top:"60px", },"slow")
+            $("#target").slideUp(2000).slideDown(2000);
+            bullet.animate({opacity:"1", left:"500px",top:"60px", },"slow")
+            bullet.animate({opacity:"0", left:"500px",top:"60px", },"slow")
+
+
+
+            mag.animate({width: '30px', opacity: '0.8'}, "slow");
+            
+
+            mereo.animate({height: '100px', opacity: '0.4'}, "slow");
+            mereo.animate({width: '100px', opacity: '0.8'}, "slow");
+          });
+         
+        });
+        </script> 
+    
+</head>
+<body>
+    <button>Start Animation</button>
+    
+    <div  id="mereo" style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+    <div  id="mag" style="background:black;height:100px;width:30px;position:absolute;left:100px;"></div>
+    <div  id="bullet" style="background:yellow;height:50px;width:100px;position:absolute;left:400px;top:60px;opacity:0.0;" ></div>
+    <div  id="target"  style="background: orange;height:50px;width: 50px;position:absolute;right: 50px;top:60px;"  ></div>
+
+
+
+
+
+
+</body>
+</html>
