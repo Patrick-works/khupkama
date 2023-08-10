@@ -9,13 +9,11 @@
         $(document).ready(function(){
           $("button").click(function(){
             var mereo = $("#mereo");
-            
             mereo.animate({width: '500px', opacity: '0.8'}, "slow");
             mereo.animate({height: '100px', opacity: '0.4'}, "slow");
             var mag = $("#mag");
             mag.animate({width: '30px', opacity: '0.8'}, "slow");
             mag.animate({height: '200px', opacity: '0.4'}, "slow");
-            
             mag.animate({height: '100px', opacity: '0.4'}, "fast");
             var bullet =$("#bullet")
             bullet.animate({opacity:"1", left:"500px",top:"60px",  },"slow")
@@ -23,16 +21,10 @@
             $("#target").slideUp(2000).slideDown(2000);
             bullet.animate({opacity:"1", left:"500px",top:"60px", },"slow")
             bullet.animate({opacity:"0", left:"500px",top:"60px", },"slow")
-
-
-
-            mag.animate({width: '30px', opacity: '0.8'}, "slow");
-            
-
+            mag.animate({width: '30px', opacity: '0.8'}, "slow");            
             mereo.animate({height: '100px', opacity: '0.4'}, "slow");
             mereo.animate({width: '100px', opacity: '0.8'}, "slow");
           });
-         
         });
         </script> 
     
@@ -44,11 +36,5 @@
     <div  id="mag" style="background:black;height:100px;width:30px;position:absolute;left:100px;"></div>
     <div  id="bullet" style="background:yellow;height:50px;width:100px;position:absolute;left:400px;top:60px;opacity:0.0;" ></div>
     <div  id="target"  style="background: orange;height:50px;width: 50px;position:absolute;right: 50px;top:60px;"  ></div>
-
-
-
-
-
-
 </body>
 </html>
