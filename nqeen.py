@@ -7,7 +7,7 @@ def make_grid(l):
         n=[]
     return m
 def clear_pathways(l,a,b,brd):
-    v,w=l-a,l-b
+    m,n=a,b
     z=max(a,b)
     p=l-z
     h=min(a,b)
@@ -23,8 +23,8 @@ def clear_pathways(l,a,b,brd):
     for i in range(h+1):
         brd[a - i][b - i] = '1'
     brd[a][b] = "Q"
-    return brd
-def cleardiag(l,m,n,brd):
+
+
     try:
         for i in range(max(m,n)+1):
             brd[m+i][n-i]='1'
@@ -44,11 +44,9 @@ def nqueen(l,m,n):
     brd=make_grid(l)
     brd = clear_pathways(l, m, n, brd)
     brd=clearp(l,m,n,brd)
-    brd = cleardiag(l,m,n,brd)
     for i in range(l):
         for j in range(l):
             if brd[i][j]=='0':
-                brd = cleardiag(l, i,j, brd)
                 brd = clearp(l, i, j, brd)
                 brd = clear_pathways(l, i, j, brd)
     return brd
