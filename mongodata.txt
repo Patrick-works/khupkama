@@ -1,0 +1,38 @@
+to create db
+>use <database name>
+
+>show dbs
+admin        0.000GB
+config       0.000GB
+dummy        0.000GB
+local        0.000GB
+placementdb  0.000GB
+test         0.000GB
+
+to switch db
+>use <db name>
+
+to insert data
+>db.user.insert({"pro_id":1 , "pro_name":"brush_soft" , "pro_desc":"soft brush for suede material" , "pro_price":2399})
+
+to remove data from collection 
+db.user.remove({"pro_id":1 , "pro_name":"brush_soft" , "pro_desc":"soft brush for suede material" , "pro_price":2399})
+
+to rename datacollection name
+db.user.renameCollection("products")
+
+to drop a database
+db.dropDatabase()
+
+products data:
+db.products.find()
+{ "_id" : ObjectId("64f15911d1efbbde7f5ed4f2"), "pro_id" : 2, "pro_name" : "brush_hard", "pro_desc" : "hard brush for leather material", "pro_price" : 1500 }
+{ "_id" : ObjectId("64f15b2dd1efbbde7f5ed4f3"), "pro_id" : 1, "pro_name" : "brush_soft", "pro_desc" : "soft brush for suede material", "pro_price" : 2399 }
+{ "_id" : ObjectId("64f15cbdd1efbbde7f5ed4f4"), "pro_id" : 3, "pro_name" : "cleaner_liquid", "pro_desc" : "cleaner liquid for suede", "pro_price" : 4000 }
+{ "_id" : ObjectId("64f15e42d1efbbde7f5ed4f5"), "pro_id" : 4, "pro_name" : "soft_cloth", "pro_desc" : "soft terry cloth towel", "pro_price" : 400 }
+
+to copy old db to new db
+>db.copyDatabase("placementdb", "Sneakerdb")
+
+
+
