@@ -1,0 +1,19 @@
+using System;
+namespace sting
+{
+    class stnopr {         
+        public static void Main()
+        {
+            Console.WriteLine("Enter First name ");
+		string fname = console.Readline(); 
+		Console.WriteLine("Enter Second name ");
+		string sname = console.Readline();
+		Console.WriteLine("Enter Third name ");
+		string lname = console.Readline();
+		string name = fname + snamr +lname;
+		System.Console.WriteLine("Full name is"+name);
+		System.Console.WriteLine("Short name is"+fname[0]+sname[0]+lname)
+
+        }
+    }
+}
