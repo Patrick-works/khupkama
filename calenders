@@ -1,0 +1,97 @@
+<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+    CodeBehind="Default.aspx.cs" Inherits="validators4a._Default" %>
+
+<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+</asp:Content>
+<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+    <h2>
+        Welcome to ASP.NET!
+    </h2>
+    <p>
+        To learn more about ASP.NET visit <a href="http://www.asp.net" title="ASP.NET Website">www.asp.net</a>.
+    </p>
+    <p>
+        You can also find <a href="http://go.microsoft.com/fwlink/?LinkID=152368&amp;clcid=0x409"
+            title="MSDN ASP.NET Docs">documentation on ASP.NET at MSDN</a>.
+    </p>
+    <form >
+    <asp:Label ID="Label1" runat="server" Text="NAME"></asp:Label>
+    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox><br />
+    <asp:Label ID="Label2" runat="server" Text="UserName"></asp:Label>
+    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox><br />
+    <asp:Label ID="Label3" runat="server" Text="Password"></asp:Label>
+    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox><br />
+    <asp:CustomValidator ID="CustomValidator1" ControlToValidate="TextBox3"    runat="server" 
+        ErrorMessage="wrong user" 
+        onservervalidate="CustomValidator1_ServerValidate"></asp:CustomValidator>
+
+    <asp:Label ID="Label5" runat="server" Text=""></asp:Label><br />
+    <asp:Label ID="Label4" runat="server" Text="Age"></asp:Label><br />
+    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox><br />
+    <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="age shall be abv 18" ControlToValidate="TextBox4" MinimumValue="19" MaximumValue="102"  Type="Integer"></asp:RangeValidator>
+    
+    
+    
+    
+    </form>
+
+
+
+
+</asp:Content>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace AWP3A
+{
+    public partial class _Default : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            var n = TextBox1.Text;
+            var m = RadioButtonList1.Text;
+            if (n == "Aryan")
+            {
+                if (m == "BSCIT")
+                {
+                    Label1.Text = "Correct user, welcome bro";
+                }
+                else {
+                    Label1.Text = "Incorrect user , wrong Aryan";
+                }
+            }
+            else if (n == "Pratik")
+            {
+               if(m=="BMS"){
+                    Label1.Text="Corret user , welcome deer";
+               }
+                else{
+                    Label1.Text="Incorrect user , wrong pratik";
+               }
+            }
+            else
+            {
+                Label1.Text = " Incoorect user ";
+            }
+        }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
