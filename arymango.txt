@@ -116,3 +116,61 @@ service
         "C_email" : "Lolu@gmailcom",
         "password" : "lamesh@6578"
 }
+
+
+
+C:\Windows\system32>cd C:\Program Files\MongoDB\Server\3.6\bin
+
+C:\Program Files\MongoDB\Server\3.6\bin>mongod
+
+
+
+cmd2 run as admin
+
+C:\Windows\system32>cd C:\Program Files\MongoDB\Server\3.6\bin
+
+C:\Program Files\MongoDB\Server\3.6\bin>mongo
+MongoDB shell version v3.6.3
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.6.3
+
+
+cmd 3 
+
+C:\Program Files\MongoDB\Server\3.6\bin>mongo
+MongoDB shell version v3.6.3
+
+
+C:\Program Files\MongoDB\Server\3.6\bin>mongoimport --host localhost --db aryan --collection restraunts --file C:\Users\NGT\Documents\neww.json
+2023-09-15T08:45:17.859+0530    connected to: localhost
+2023-09-15T08:45:17.860+0530    imported 24 documents
+
+
+
+C:\Program Files\MongoDB\Server\3.6\bin>mongoexport --db aryanrest --collection restraunts  --type JSON  --out Documents\hello.txt
+2023-09-15T09:41:16.632+0530    connected to: localhost
+2023-09-15T09:41:16.636+0530    exported 24 records
+
+
+ --host localhost --db aryan --collection restraunts --file C:\Users\NGT\Documents\neww.json
+2023-09-15T08:45:17.859+0530    connected to: localhost
+2023-09-15T08:45:17.860+0530    imported 24 documents
+
+
+
+C:\Program Files\MongoDB\Server\3.6\bin>mongoexport --db aryanrest --collection restraunts  --type JSON  --out Documents\hello.JSON
+2023-09-15T09:17:49.245+0530    connected to: localhost
+2023-09-15T09:17:49.247+0530    exported 24 records
+
+C:\Program Files\MongoDB\Server\3.6\bin>mongoexport --db aryanrest --collection restraunts  --type txt  --out Documents\hello.txt
+2023-09-15T09:40:30.984+0530    error validating settings: invalid output type 'txt', choose 'json' or 'csv'
+2023-09-15T09:40:30.984+0530    try 'mongoexport --help' for more information
+
+C:\Program Files\MongoDB\Server\3.6\bin>mongoexport --db aryanrest --collection restraunts  --type csv  --out Documents\hello.csv
+2023-09-15T09:40:59.087+0530    Failed: CSV mode requires a field list
+
+C:\Program Files\MongoDB\Server\3.6\bin>mongoexport --db aryanrest --collection restraunts  --type JSON  --out Documents\hello.txt
+2023-09-15T09:41:16.632+0530    connected to: localhost
+2023-09-15T09:41:16.636+0530    exported 24 records
+
+C:\Program Files\MongoDB\Server\3.6\bin>
