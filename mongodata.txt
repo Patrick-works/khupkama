@@ -6,7 +6,7 @@ admin        0.000GB
 config       0.000GB
 dummy        0.000GB
 local        0.000GB
-placementdb  0.000GB
+sneakers     0.000GB
 test         0.000GB
 
 to switch db
@@ -24,15 +24,201 @@ db.user.renameCollection("products")
 to drop a database
 db.dropDatabase()
 
-products data:
-db.products.find()
-{ "_id" : ObjectId("64f15911d1efbbde7f5ed4f2"), "pro_id" : 2, "pro_name" : "brush_hard", "pro_desc" : "hard brush for leather material", "pro_price" : 1500 }
-{ "_id" : ObjectId("64f15b2dd1efbbde7f5ed4f3"), "pro_id" : 1, "pro_name" : "brush_soft", "pro_desc" : "soft brush for suede material", "pro_price" : 2399 }
-{ "_id" : ObjectId("64f15cbdd1efbbde7f5ed4f4"), "pro_id" : 3, "pro_name" : "cleaner_liquid", "pro_desc" : "cleaner liquid for suede", "pro_price" : 4000 }
-{ "_id" : ObjectId("64f15e42d1efbbde7f5ed4f5"), "pro_id" : 4, "pro_name" : "soft_cloth", "pro_desc" : "soft terry cloth towel", "pro_price" : 400 }
-
 to copy old db to new db
 >db.copyDatabase("placementdb", "Sneakerdb")
 
+to delete a key,value in the collection
+>db.products.updateMany({},{$unset:{"pro_id":1}})
+
+products data:
+>db.products.find().pretty()
+{
+        "_id" : ObjectId("64f15911d1efbbde7f5ed4f2"),
+        "pro_name" : "brush_hard",
+        "pro_desc" : "hard brush for leather material",
+        "pro_price" : 1500
+}
+{
+        "_id" : ObjectId("64f15b2dd1efbbde7f5ed4f3"),
+        "pro_name" : "brush_soft",
+        "pro_desc" : "soft brush for suede material",
+        "pro_price" : 2399
+}
+{
+        "_id" : ObjectId("64f15cbdd1efbbde7f5ed4f4"),
+        "pro_name" : "cleaner_liquid",
+        "pro_desc" : "cleaner liquid for suede",
+        "pro_price" : 4000
+}
+{
+        "_id" : ObjectId("64f15e42d1efbbde7f5ed4f5"),
+        "pro_name" : "soft_cloth",
+        "pro_desc" : "soft terry cloth towel",
+        "pro_price" : 400
+}
+{
+        "_id" : ObjectId("64f16c96d1efbbde7f5ed4f6"),
+        "pro_name" : "common cleaner liquid",
+        "pro_desc" : "cleaner liquid for common sneaker materials",
+        "pro_price" : 1000
+}
+
+customers data:
+db.customers.find().pretty()
+{
+        "_id" : ObjectId("64f16e76d1efbbde7f5ed4f7"),
+        "cust_fname" : "shubham",
+        "cust_mname" : "vijay",
+        "cust_lname" : "pol",
+        "cust_email" : "shubhampol3006@gmail.com",
+        "cust_password" : "shubh123",
+        "cust_phone" : 9821941106
+}
+
+db.cars.insert({"model":"Ferrari","variety":["Petrol","Diesel"],"color":["red","green","white","black"],"price":400000}
+
+ db.cars.update({"price":400000},($set:{"model":"BMW"})
 
 
+show collections
+Employee
+customers
+products
+
+db.Employee.find().pretty()
+{
+        "_id" : ObjectId("64fa94c18828564e6a038b8f"),
+        "emp_fname" : "john",
+        "emp_mname" : "pascal",
+        "emp_lname" : "dsouza",
+        "emp_city" : "mumbai",
+        "emp_state" : "maha",
+        "emp_country" : "india",
+        "emp_pincode" : 400070,
+        "emp_eid" : "johnwork06@gmail.com",
+        "emp_pass" : "12345@12",
+        "emp_salary" : 40000,
+        "emp_phone" : 8359688920,
+        "emp_role" : "P.S_emp"
+}
+{
+        "_id" : ObjectId("64fa95ae8828564e6a038b90"),
+        "emp_fname" : "Shemus",
+        "emp_mname" : "raju",
+        "emp_lname" : "gaitonde",
+        "emp_city" : "thane",
+        "emp_state" : "maha",
+        "emp_country" : "india",
+        "emp_pincode" : 400071,
+        "emp_eid" : "shemdya@gmail.com",
+        "emp_pass" : "12346@12",
+        "emp_salary" : 50000,
+        "emp_phone" : 8359668920,
+        "emp_role" : "P.S_emp"
+}
+{
+        "_id" : ObjectId("64fa9b388828564e6a038b99"),
+        "emp_fname" : "emu",
+        "emp_mname" : "val",
+        "emp_lname" : "fernandes",
+        "emp_city" : "thane",
+        "emp_state" : "maha",
+        "emp_country" : "india",
+        "emp_pincode" : 400568,
+        "emp_eid" : "emuworks@gmail.com",
+        "emp_pass" : "12346@13",
+        "emp_salary" : 55000,
+        "emp_phone" : 8169050536,
+        "emp_role" : "Appointment_emp"
+}
+{
+        "_id" : ObjectId("64fa9c2a8828564e6a038b9a"),
+        "emp_fname" : "rushya",
+        "emp_mname" : "delivery",
+        "emp_lname" : "shinde",
+        "emp_city" : "panvel",
+        "emp_state" : "maha",
+        "emp_country" : "india",
+        "emp_pincode" : 404458,
+        "emp_eid" : "rushyaworks@gmail.com",
+        "emp_pass" : "12346@14",
+        "emp_salary" : 30000,
+        "emp_phone" : 8898257907,
+        "emp_role" : "delivery&pickup_emp"
+}
+
+db.products.find().pretty()
+{
+        "_id" : ObjectId("64f15911d1efbbde7f5ed4f2"),
+        "pro_name" : "brush_hard",
+        "pro_desc" : "hard brush for leather material",
+        "pro_price" : 1500
+}
+{
+        "_id" : ObjectId("64f15b2dd1efbbde7f5ed4f3"),
+        "pro_name" : "brush_soft",
+        "pro_desc" : "soft brush for suede material",
+        "pro_price" : 2399
+}
+{
+        "_id" : ObjectId("64f15cbdd1efbbde7f5ed4f4"),
+        "pro_name" : "cleaner_liquid",
+        "pro_desc" : "cleaner liquid for suede",
+        "pro_price" : 4000,
+        "pro_discount" : 50
+}
+{
+        "_id" : ObjectId("64f15e42d1efbbde7f5ed4f5"),
+        "pro_name" : "soft_cloth",
+        "pro_desc" : "soft terry cloth towel",
+        "pro_price" : 400
+}
+{
+        "_id" : ObjectId("64f16c96d1efbbde7f5ed4f6"),
+        "pro_name" : "common cleaner liquid",
+        "pro_desc" : "cleaner liquid for common sneaker materials",
+        "pro_price" : 1000
+}
+
+
+
+
+****************
+C:\>c:\practicalmongodb\bin\mongoimport.exe --help
+Import CSV, TSV or JSON data into MongoDB.
+When importing JSON documents, each document must be a separate line of the input file.
+Example:
+mongoimport --host myhost --db my_cms --collection docs < mydocfile.json
+....
+C:\>
+Issue the following command to import the data from the file exporteg.csv to a new collection called
+importeg in the MyDB database :
+C:\>c:\practicalmongodb\bin\mongoimport.exe --host localhost --db mydb --collection
+importeg --type csv --file c:\exporteg.csv --headerline
+2015-07-06T01:53:23.537-0700 connected to: localhost
+2015-07-06T01:53:23.608-0700 imported 15 documents
+
+
+
+from pymongo import MongoClient
+# for connection to mongo
+client = MongoClient()
+client = MongoClient('mongodb://localhost:27017/')
+db = client.Sneakerdb
+collection = db.products
+
+data = {
+        "pro_name" : "common gsg tliquid",
+        "pro_desc" : "cleaner soap for common sneaker materials",
+        "pro_price" : 10
+}
+x=collection.insert_one(data)
+print(x.inserted_id)
+print("------------------------------------------------------------------")
+for document in collection.find():
+    print(document)
+beta = { 'pro_name': 'brush_hard', 'pro_desc': 'hard brush for leather material', 'pro_price': 1500.0}
+collection.delete_one(beta)
+print("------------------------------------------------------------------")
+for document in collection.find():
+    print(document)
