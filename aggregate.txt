@@ -1,0 +1,36 @@
+C:\Users\NGT>cd C:\mongodb3.7.9\bin
+
+C:\mongodb3.7.9\bin>mongod
+> show dbs
+Sneakerdb  0.000GB
+aditi      0.000GB
+admin      0.000GB
+aryan      0.000GB
+aryan_new  0.000GB
+aryanrest  0.000GB
+config     0.000GB
+dummy      0.000GB
+local      0.000GB
+rushiDB1   0.000GB
+test       0.000GB
+> use aryan
+switched to db aryan
+> show collections
+cars
+customer
+employee
+restraunts
+service
+> db.cars.find()
+{ "_id" : ObjectId("64f6bdd9b90e3b73784b59cc"), "model" : "BMW", "variety" : [ "Petrol", "Diesel" ], "color" : [ "red", "green", "white", "black" ], "price" : 400000 }
+{ "_id" : ObjectId("64f6be3ab90e3b73784b59cd"), "model" : "Lamborghini", "variety" : [ "Petrol", "Diesel" ], "color" : [ "red", "white", "black" ], "price" : 1400000 }
+> db.cars.aggregate([{$group:{_id:null,total:{$sum:"$price"}}}])
+{ "_id" : null, "total" : 1800000 }
+> db.cars.aggregate([{$group:{_id:null,total:{$avg:"$price"}}}])
+{ "_id" : null, "total" : 900000 }
+> db.cars.aggregate([{$group:{_id:null,total:{$max:"$price"}}}])
+{ "_id" : null, "total" : 1400000 }
+> db.cars.aggregate([{$group:{_id:null,total:{$min:"$price"}}}])
+{ "_id" : null, "total" : 400000 }
+> C:\mongodb3.7.9\bin
+
