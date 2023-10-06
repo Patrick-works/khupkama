@@ -174,3 +174,19 @@ C:\Program Files\MongoDB\Server\3.6\bin>mongoexport --db aryanrest --collection 
 2023-09-15T09:41:16.636+0530    exported 24 records
 
 C:\Program Files\MongoDB\Server\3.6\bin>
+
+
+
+1
+Cmd raadmin
+cd path
+mongod
+2
+cmd raad
+cd path
+
+backup-
+C:\Program Files\MongoDB\Server\3.6\bin>mongodump --out C:\apprac --db aryan
+restore-
+C:\Program Files\MongoDB\Server\3.6\bin>mongorestore --dir c:\apprac --db aryan_new
+
