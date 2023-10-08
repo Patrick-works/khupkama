@@ -23,16 +23,12 @@ def clear_pathways(l,a,b,brd):
     for i in range(h+1):
         brd[a - i][b - i] = '1'
     brd[a][b] = "Q"
-
-
     try:
         for i in range(max(m,n)+1):
             brd[m+i][n-i]='1'
     except:
         pass
     brd[m][n] = "Q"
-
-
     try:
         for i in range(min(m,n)+1):
             brd[m-i][n+i]='1'
@@ -43,14 +39,44 @@ def clear_pathways(l,a,b,brd):
 def nqueen(l,m,n):
     brd=make_grid(l)
     brd = clear_pathways(l, m, n, brd)
+    # for ii in brd:
+    #     print(ii, end="\n")
+    # print("__________________")
     for i in range(l):
         for j in range(l):
             if brd[i][j]=='0':
                 brd = clear_pathways(l, i, j, brd)
+                # for ii in brd:
+                #     print(ii, end="\n")
+                # print("__________________")
+
     return brd
-for ii in range(4):
-    for jj in range(4):
-        z = nqueen(4, ii, jj)
+
+
+cnt=0
+kk=4
+ll=[]
+lo=[]
+mx=[]
+jfk=False
+for ii in range(kk):
+    for jj in range(kk):
+        mx.append([ii,jj])
+        z = nqueen(kk, ii, jj)
+        lo.append(z)
         for i in z:
-            print(i, end="\n")
-        print("__________________")
+
+            for j in i:
+                if j == "Q":
+                    cnt = cnt + 1
+        ll.append(cnt)
+        # print(cnt)
+        # print("__________________",)
+        cnt=0
+gr=lo[ll.index((max(ll)))]
+print("maximum queens accomdated are ",max(ll),)
+plk=mx[ll.index((max(ll)))]
+mlk=[ll.index((max(ll)))]
+jfk=True
+for i in gr:
+    print(i,end='\n')
