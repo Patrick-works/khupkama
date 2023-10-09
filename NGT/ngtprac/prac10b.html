@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.0"></script>
+    <script>
+        $(document).ready(function(){
+            $("#hid").hover(function(){
+                $("#p1").hide();
+                            
+            });
+            $("#shw").click(function(){
+                $("#p1").show();
+                            
+            });
+            $("*").css({"color":"red","font-size":"30px"})
+            $("p").css({"color":"blue","font-size":"30px"})
+            $(".p2").css({"color":"pink","font-size":"30px"})
+            $("#i3").css({"color":"brown","font-size":"30px"})
+        });
+    </script>
+</head>
+<body>
+    <p id="pr" > helow</p>
+    <p id="is">kk</p>
+    <p id="p1" > helow</p>
+    <p id="i1">kk</p>
+    <p class="p2" > helow</p>
+    <p id="i2">kk</p>
+    <p id="p3" > helow</p>
+    <p id="i3">kk</p>
+    <input id="hid" type="button" value="click for hide">
+    <input id="shw" type="button" value="click to show">
+</body>
+</html>

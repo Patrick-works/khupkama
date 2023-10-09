@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const data = fetch('response.json')
+        .then((response)=>{
+            return ((response.json()))})
+            .then((response)=>{
+
+                //stringify
+                const stringifyData = JSON.stringify(response,null,3);
+                //const stringifyData = JSON.stringify(response,["cus_fname","date"],3);
+                console.log("this is stringify",stringifyData);
+
+                function reviver(key,value){
+                    if(key==="date"){
+                        return new Date(value)
+                    }
+                    return value;
+                }
+                
+                //parse
+                const parseData = JSON.parse(stringifyData,reviver);
+                console.log("this is parse",parseData);
+        })
+        //console.log(data); 
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

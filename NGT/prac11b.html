@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Counter</title>
+    <script src="jquery-3.7.0"></script>
+</head>
+<body>
+    <h1>Basic Counter</h1>
+    <p>Counter: <span id="counter">0</span></p>
+    <p id="message"></p>
+    <button id="increment">Increment</button>
+
+    
+    <script>
+        $(document).ready(function() {
+            var counter = 0;
+
+            $("#increment").click(function() {
+                counter++;
+                $("#counter").text(counter);
+
+                if (counter >= 12) {
+                    $("#message").text("Threshold reached!");
+                } 
+                else if(counter >=10){
+                    $("#message").html("<h1>Hello world!</h1>");
+
+                }
+                
+                else {
+                    $("#message").text("Hello world!");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

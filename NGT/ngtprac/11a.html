@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.0"></script>
+    <script >
+        $(document).ready(function() {
+            $("#btn").click(function() {
+                $("#div1").animate({ left: '150px' }, "slow");
+                $("#div2").animate({ rightt: '450px' }, "slow");
+                $("#div3").animate({opacity:'0.3', left: '240px' }, "slow");
+            });
+        });
+        
+    </script>
+</head>
+<body>
+    <div id="tgl">
+        <p>ji</p>
+        <div id="d1"> 
+            <div id ='div1'style="background:#98bf21;height:100px;width:100px;position:absolute;"></div><br>
+            <div id="div2" style="width:80px;height:80px;background-color:green;position:absolute;"></div><br>
+            <div id="div3" style="width:80px;height:80px;background-color:blue;"></div>
+            <input id="go" type="button" value="ok">
+        </div>
+       
+    </div>
+    <input  id="btn"type="button" value="slide">
+
+    
+</body>
+</html>

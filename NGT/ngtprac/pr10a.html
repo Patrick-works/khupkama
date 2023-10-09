@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <script src="jquery-3.7.0"></script>
+    <script>
+        $(document).ready(function(){
+            $("#pr").click(function(){
+                $("#is").fadeOut("slow")
+            });
+            $("#p1").hover(function(){
+                $("#i1").animate({opacity:"0.3"})
+            });
+            $("#p2").click(function(){
+                $("#i2").fadeToggle("slow")
+            });
+            $("#p3").dblclick(function(){
+                $("#i3").css({'color':'red',"font-size":"70px"})
+            });
+        });
+    </script>
+
+<p id="pr" > helow</p>
+<p id="is">kk</p>
+<p id="p1" > helow</p>
+<p id="i1">kk</p>
+<p id="p2" > helow</p>
+<p id="i2">kk</p>
+<p id="p3" > helow</p>
+<p id="i3">kk</p>
+<!--
+<p id="p4" > helow</p>
+<p id="i4">kk</p>
+<p id="p5" > helow</p>
+<p id="i5">kk</p>
+<p id="p6" > helow</p>
+<p id="i6">kk</p> -->
+</body>
+
+
+
+</html>

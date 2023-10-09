@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery DOM Manipulation</title>
+    <script src="jquery-3.7.0"></script>
+    <script>
+        $(document).ready(function() {
+            // Add Task
+            $("#addTask").click(function() {
+                var newTaskText = $("#newTask").val();
+                if (newTaskText.trim() !== "") {
+                    var newTask = $("<li>").text(newTaskText);
+                    newTask.append('<button class="deleteTask">Delete</button>');
+                    $("#taskList").append(newTask);
+                    $("#newTask").val("");
+                }
+            });
+        
+            // Delete Task
+            $("#taskList").on("click", ".deleteTask", function() {
+                $(this).parent().remove();
+            });
+        
+            // Change Logo
+            $("#changeLogo").click(function() {
+                $("#logo").attr("src", "avj.jpg");
+                $("#logo").attr("alt", "New Logo");
+            });
+        });
+        
+    </script>
+</head>
+<body>
+    <h1>Todo List</h1>
+    
+    <input type="text" id="newTask" placeholder="Enter a new task">
+    <button id="addTask">Add Task</button>
+    
+    <ul id="taskList">
+        <li>Example Task <button class="deleteTask">Delete</button></li>
+    </ul>
+    
+    <img id="logo" src="4105638.jpg" alt="Logo">
+    
+    <button id="changeLogo">Change Logo</button>
+    
+    <script src="script.js"></script>
+</body>
+</html>

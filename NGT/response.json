@@ -1,0 +1,23 @@
+[
+    {
+        "cus_fname":"vandu",
+        "cus_lname":"padhi",
+        "cus_age":18,
+        "cus_dep":"IT",
+        "date":"02-02-2004"
+    },
+    {
+        "cus_fname":"samee",
+        "cus_lname":"kadam",
+        "cus_age":19,
+        "cus_dep":"BBI",
+        "date":"21-02-2004"
+    },
+    {
+        "cus_fname":"rushi",
+        "cus_lname":"shinde",
+        "cus_age":20,
+        "cus_dep":"BMS",
+        "date":"27-03-2003"
+    }
+]
